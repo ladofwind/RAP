@@ -39,7 +39,7 @@ public class SessionListener implements HttpSessionListener {
         // unlock project
         Object userIdObj = session.getAttribute(ContextManager.KEY_USER_ID);
         if (userIdObj != null) {
-            long userId = (Long) userIdObj;
+            int userId = ((Integer) userIdObj).intValue();
             Object projectLockListObj = context.getAttribute(ContextManager.KEY_PROJECT_LOCK_LIST);
             if (projectLockListObj != null) {
                 Map projectLockList = (Map) projectLockListObj;
